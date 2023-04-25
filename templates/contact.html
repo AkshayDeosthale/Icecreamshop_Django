@@ -1,0 +1,64 @@
+{% extends 'base.html' %} {% block body %}
+
+<div class="container-fluid px-0">
+  <img
+    src="https://source.unsplash.com/random/1200x400/?mobilephone"
+    class="d-block w-100"
+    alt="iccecream collage"
+  />
+</div>
+
+<div class="container">
+  <h3 class="text-center my-4">Contact Us</h3>
+
+  <form class="py-3" method="post" action="/contact">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="fullname" class="form-label">Fullname</label>
+      <input
+        type="text"
+        class="form-control"
+        id="fullname"
+        aria-describedby="fullname"
+        name="fullname"
+        placeholder="Enter your full fullname"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        aria-describedby="email"
+        placeholder="Enter your email ID"
+      />
+      <div id="emailHelp" class="form-text">
+        We'll never share your email with anyone else.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone</label>
+      <input
+        type="number"
+        class="form-control"
+        id="phone"
+        name="phone"
+        placeholder="Enter your mobile number"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea
+        class="form-control"
+        id="description"
+        name="description"
+      ></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Contact</button>
+  </form>
+</div>
+
+{% endblock body %}
